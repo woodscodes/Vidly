@@ -25,6 +25,8 @@ namespace Vidly
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-superhero.css",
                       "~/Content/site.css"));
+
+
         }
     }
 }
