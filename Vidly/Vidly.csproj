@@ -175,61 +175,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904150120245_InitialModel.cs" />
-    <Compile Include="Migrations\201904150120245_InitialModel.Designer.cs">
-      <DependentUpon>201904150120245_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201905171104463_initial.cs" />
+    <Compile Include="Migrations\201905171104463_initial.Designer.cs">
+      <DependentUpon>201905171104463_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904150135044_AddIsSubscribedToCustomer.cs" />
-    <Compile Include="Migrations\201904150135044_AddIsSubscribedToCustomer.Designer.cs">
-      <DependentUpon>201904150135044_AddIsSubscribedToCustomer.cs</DependentUpon>
+    <Compile Include="Migrations\201905171115563_DeleteRedundantGenreIdValuesFromMoviesTable.cs" />
+    <Compile Include="Migrations\201905171115563_DeleteRedundantGenreIdValuesFromMoviesTable.Designer.cs">
+      <DependentUpon>201905171115563_DeleteRedundantGenreIdValuesFromMoviesTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904150138413_AddMembershipType.cs" />
-    <Compile Include="Migrations\201904150138413_AddMembershipType.Designer.cs">
-      <DependentUpon>201904150138413_AddMembershipType.cs</DependentUpon>
+    <Compile Include="Migrations\201905171118415_RemoveRedundantGenreIdFromMoviesTable.cs" />
+    <Compile Include="Migrations\201905171118415_RemoveRedundantGenreIdFromMoviesTable.Designer.cs">
+      <DependentUpon>201905171118415_RemoveRedundantGenreIdFromMoviesTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904150146207_PopulateMembershipTypes.cs" />
-    <Compile Include="Migrations\201904150146207_PopulateMembershipTypes.Designer.cs">
-      <DependentUpon>201904150146207_PopulateMembershipTypes.cs</DependentUpon>
+    <Compile Include="Migrations\201905171126278_DropGenreIdColumnFromMoviesTable.cs" />
+    <Compile Include="Migrations\201905171126278_DropGenreIdColumnFromMoviesTable.Designer.cs">
+      <DependentUpon>201905171126278_DropGenreIdColumnFromMoviesTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904150159069_ApplyAnnotationsToCustomerName.cs" />
-    <Compile Include="Migrations\201904150159069_ApplyAnnotationsToCustomerName.Designer.cs">
-      <DependentUpon>201904150159069_ApplyAnnotationsToCustomerName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904300148082_AddNameFieldToMembershipType.cs" />
-    <Compile Include="Migrations\201904300148082_AddNameFieldToMembershipType.Designer.cs">
-      <DependentUpon>201904300148082_AddNameFieldToMembershipType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904300150499_UpdateMembershipType.cs" />
-    <Compile Include="Migrations\201904300150499_UpdateMembershipType.Designer.cs">
-      <DependentUpon>201904300150499_UpdateMembershipType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904300236326_AddBirthdateToCustomersTable.cs" />
-    <Compile Include="Migrations\201904300236326_AddBirthdateToCustomersTable.Designer.cs">
-      <DependentUpon>201904300236326_AddBirthdateToCustomersTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905070102410_PopulateCustomerTableWithBirthdates.cs" />
-    <Compile Include="Migrations\201905070102410_PopulateCustomerTableWithBirthdates.Designer.cs">
-      <DependentUpon>201905070102410_PopulateCustomerTableWithBirthdates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905070118575_AddMoviesTable.cs" />
-    <Compile Include="Migrations\201905070118575_AddMoviesTable.Designer.cs">
-      <DependentUpon>201905070118575_AddMoviesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905070122596_ApplyAnnotationsToMoviesTable.cs" />
-    <Compile Include="Migrations\201905070122596_ApplyAnnotationsToMoviesTable.Designer.cs">
-      <DependentUpon>201905070122596_ApplyAnnotationsToMoviesTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905070125503_AddGenreTableAndModifyMovieTable.cs" />
-    <Compile Include="Migrations\201905070125503_AddGenreTableAndModifyMovieTable.Designer.cs">
-      <DependentUpon>201905070125503_AddGenreTableAndModifyMovieTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905070130464_PopulateGenreTable.cs" />
-    <Compile Include="Migrations\201905070130464_PopulateGenreTable.Designer.cs">
-      <DependentUpon>201905070130464_PopulateGenreTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905070142457_PopulateMoviesTable.cs" />
-    <Compile Include="Migrations\201905070142457_PopulateMoviesTable.Designer.cs">
-      <DependentUpon>201905070142457_PopulateMoviesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201905171129302_ReseedMoviesTableWithCorrectGenreIds.cs" />
+    <Compile Include="Migrations\201905171129302_ReseedMoviesTableWithCorrectGenreIds.Designer.cs">
+      <DependentUpon>201905171129302_ReseedMoviesTableWithCorrectGenreIds.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -241,8 +205,8 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\MoviesViewModel.cs" />
-    <Compile Include="ViewModels\RandomMovieViewModel.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MoviesFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-superhero.css" />
@@ -301,16 +265,17 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Customers\ViewIndividualCustomer.cshtml" />
+    <Content Include="Views\Customers\Customer.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
-    <Content Include="Views\Movies\ViewMovie.cshtml" />
-    <Content Include="Views\Customers\New.cshtml" />
+    <Content Include="Views\Movies\Movie.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\MoviesFormViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -326,47 +291,20 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904150120245_InitialModel.resx">
-      <DependentUpon>201904150120245_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905171104463_initial.resx">
+      <DependentUpon>201905171104463_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904150135044_AddIsSubscribedToCustomer.resx">
-      <DependentUpon>201904150135044_AddIsSubscribedToCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905171115563_DeleteRedundantGenreIdValuesFromMoviesTable.resx">
+      <DependentUpon>201905171115563_DeleteRedundantGenreIdValuesFromMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904150138413_AddMembershipType.resx">
-      <DependentUpon>201904150138413_AddMembershipType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905171118415_RemoveRedundantGenreIdFromMoviesTable.resx">
+      <DependentUpon>201905171118415_RemoveRedundantGenreIdFromMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904150146207_PopulateMembershipTypes.resx">
-      <DependentUpon>201904150146207_PopulateMembershipTypes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905171126278_DropGenreIdColumnFromMoviesTable.resx">
+      <DependentUpon>201905171126278_DropGenreIdColumnFromMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904150159069_ApplyAnnotationsToCustomerName.resx">
-      <DependentUpon>201904150159069_ApplyAnnotationsToCustomerName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904300148082_AddNameFieldToMembershipType.resx">
-      <DependentUpon>201904300148082_AddNameFieldToMembershipType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904300150499_UpdateMembershipType.resx">
-      <DependentUpon>201904300150499_UpdateMembershipType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904300236326_AddBirthdateToCustomersTable.resx">
-      <DependentUpon>201904300236326_AddBirthdateToCustomersTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905070102410_PopulateCustomerTableWithBirthdates.resx">
-      <DependentUpon>201905070102410_PopulateCustomerTableWithBirthdates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905070118575_AddMoviesTable.resx">
-      <DependentUpon>201905070118575_AddMoviesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905070122596_ApplyAnnotationsToMoviesTable.resx">
-      <DependentUpon>201905070122596_ApplyAnnotationsToMoviesTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905070125503_AddGenreTableAndModifyMovieTable.resx">
-      <DependentUpon>201905070125503_AddGenreTableAndModifyMovieTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905070130464_PopulateGenreTable.resx">
-      <DependentUpon>201905070130464_PopulateGenreTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905070142457_PopulateMoviesTable.resx">
-      <DependentUpon>201905070142457_PopulateMoviesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905171129302_ReseedMoviesTableWithCorrectGenreIds.resx">
+      <DependentUpon>201905171129302_ReseedMoviesTableWithCorrectGenreIds.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

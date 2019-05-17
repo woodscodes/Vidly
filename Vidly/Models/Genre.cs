@@ -1,8 +1,11 @@
-﻿namespace Vidly.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Vidly.Models
 {
     public class Genre
     {
-        public int Id { get; set; }
+        public byte Id { get; set; }
+        [Display(Name="Genre")]
         public string GenreType { get; set; }
 
     }
