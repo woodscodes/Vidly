@@ -4,7 +4,7 @@
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
 
-    <h2>Customers</h2>
+    <h2>Customers <span>@Html.ActionLink("Add customer", "New", "Customers", new { @class = "badge badge-info" })</span></h2>
 
     @if (!Model.Any())
     {

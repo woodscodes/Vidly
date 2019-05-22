@@ -10,6 +10,11 @@ namespace Vidly.ViewModels
     {
         public IEnumerable<MembershipType> MembershipTypes { get; set; }
         public Customer Customer { get; set; }
-        public string OperationType { get; set; }
+        public string OperationType {
+            get
+            {
+                return Customer != null && Customer.Id != 0 ? "Edit customer" : "New customer";
+            }
+        }
     }
 }
