@@ -6,7 +6,7 @@ namespace Vidly.Models
     {
         public byte Id { get; set; }
         [Display(Name="Genre")]
-        public string GenreType { get; set; }
+        public string Name { get; set; }
 
     }
 }

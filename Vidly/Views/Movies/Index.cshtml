@@ -12,13 +12,14 @@
 }
 else
 {
-    <table class="table table-striped table-hover">
+    <table id="movies" class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Release Date</th>
                 <th>Date Added</th>
                 <th>Genre</th>
+                <th>Delete</th>
 
             </tr>
         </thead>
@@ -29,11 +30,26 @@ else
                     <td>@Html.ActionLink(movie.Name, "Movie", new { id = movie.Id }, null)</td>
                     <td>@movie.ReleaseDate.ToShortDateString()</td>
                     <td>@movie.DateAdded.ToShortDateString()</td>
-                    <td>@movie.Genre.GenreType</td>
+                    <td>@movie.Genre.Name</td>
+                    <td>
+                        <button class="btn-link js-delete">Delete</button>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
 }
+
+@section scripts {
+    
+    <script>
+        $(document).ready(function () {
+            $("#movies .js-delete").on("click", function () {
+                console.log("hi");
+            });
+        });
+    </script>
+    
+    }
 
 

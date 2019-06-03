@@ -20,5 +20,6 @@ namespace Vidly.DTOs
 
         public bool IsSubscribedToNewsletter { get; set; }
         public byte MembershipTypeId { get; set; } // Foreign key to Membership type (suffixed by Id - EF conventions)
+        public MembershipTypeDTO MembershipType { get; set; }
     }
 }
