@@ -32,10 +32,10 @@ namespace Vidly.Controllers
         // GET: Movies
         public ViewResult Movie(int id)
         {
-            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+            /*var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
             
             if(movie != null)
-                return View(movie);
+                return View(movie);*/
 
             return View();
         }
