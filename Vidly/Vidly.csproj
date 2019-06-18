@@ -18,7 +18,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44338</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -223,15 +223,35 @@
     <Compile Include="Migrations\201906122346456_ReseedGenresTable.Designer.cs">
       <DependentUpon>201906122346456_ReseedGenresTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906171043004_SeedUsers.cs" />
+    <Compile Include="Migrations\201906171043004_SeedUsers.Designer.cs">
+      <DependentUpon>201906171043004_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906171119056_AddDrivingLicenceToApplicationUser.cs" />
+    <Compile Include="Migrations\201906171119056_AddDrivingLicenceToApplicationUser.Designer.cs">
+      <DependentUpon>201906171119056_AddDrivingLicenceToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906181047028_AddedPhoneFieldToAspNetUsers.cs" />
+    <Compile Include="Migrations\201906181047028_AddedPhoneFieldToAspNetUsers.Designer.cs">
+      <DependentUpon>201906181047028_AddedPhoneFieldToAspNetUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906181049174_ChangedPhoneFieldInAspNetUsers.cs" />
+    <Compile Include="Migrations\201906181049174_ChangedPhoneFieldInAspNetUsers.Designer.cs">
+      <DependentUpon>201906181049174_ChangedPhoneFieldInAspNetUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -297,10 +317,11 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Customer.cshtml" />
-    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
     <Content Include="Views\Movies\Movie.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -341,6 +362,18 @@
     <EmbeddedResource Include="Migrations\201906122346456_ReseedGenresTable.resx">
       <DependentUpon>201906122346456_ReseedGenresTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906171043004_SeedUsers.resx">
+      <DependentUpon>201906171043004_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906171119056_AddDrivingLicenceToApplicationUser.resx">
+      <DependentUpon>201906171119056_AddDrivingLicenceToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906181047028_AddedPhoneFieldToAspNetUsers.resx">
+      <DependentUpon>201906181047028_AddedPhoneFieldToAspNetUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906181049174_ChangedPhoneFieldInAspNetUsers.resx">
+      <DependentUpon>201906181049174_ChangedPhoneFieldInAspNetUsers.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -360,7 +393,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51440</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51440/</IISUrl>
+          <IISUrl>https://localhost:44338/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
