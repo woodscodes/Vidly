@@ -29,12 +29,18 @@ namespace Vidly.Controllers.API
             _context = new ApplicationDbContext();
         }
         // GET /api/customers (GET returns data)
-        public IEnumerable<CustomerDTO> GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            return _context.Customers
-                .Include(c => c.MembershipType)
+            var customersQuery = _context.Customers.Include(c => c.MembershipType);
+
+            if (!string.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+
+            var customerDtos = customersQuery
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDTO>);
+
+            return Ok(customerDtos);
         } 
 
         // A DTO is a plain object used to transfer data to the client or server and vice versa

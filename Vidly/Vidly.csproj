@@ -48,6 +48,21 @@
     <Reference Include="AutoMapper, Version=4.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.1.0\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.AspNet, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.AspNet.1.8.0\lib\net45\Glimpse.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.EF6, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.EF6.1.6.5\lib\net45\Glimpse.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -184,14 +199,18 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\API\CustomersController.cs" />
     <Compile Include="Controllers\API\MoviesController.cs" />
+    <Compile Include="Controllers\API\RentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="DTOs\CustomerDTO.cs" />
     <Compile Include="DTOs\GenreDTO.cs" />
     <Compile Include="DTOs\MembershipTypeDTO.cs" />
     <Compile Include="DTOs\MovieDTO.cs" />
+    <Compile Include="DTOs\RentalDTO.cs" />
+    <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -239,6 +258,26 @@
     <Compile Include="Migrations\201906181049174_ChangedPhoneFieldInAspNetUsers.Designer.cs">
       <DependentUpon>201906181049174_ChangedPhoneFieldInAspNetUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906201059391_AddRentalTable.cs" />
+    <Compile Include="Migrations\201906201059391_AddRentalTable.Designer.cs">
+      <DependentUpon>201906201059391_AddRentalTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906201150490_AddAvailabilityFieldToMoviesTable.cs" />
+    <Compile Include="Migrations\201906201150490_AddAvailabilityFieldToMoviesTable.Designer.cs">
+      <DependentUpon>201906201150490_AddAvailabilityFieldToMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906210132528_SetAvailabilityFieldToNumberInStockFieldInMoviesTable.cs" />
+    <Compile Include="Migrations\201906210132528_SetAvailabilityFieldToNumberInStockFieldInMoviesTable.Designer.cs">
+      <DependentUpon>201906210132528_SetAvailabilityFieldToNumberInStockFieldInMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906211155594_SeedDataInMoviesTableStockNumberAndAvailabilityNumber.cs" />
+    <Compile Include="Migrations\201906211155594_SeedDataInMoviesTableStockNumberAndAvailabilityNumber.Designer.cs">
+      <DependentUpon>201906211155594_SeedDataInMoviesTableStockNumberAndAvailabilityNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906211157296_SetAvailabilityFieldToNumberInStockFieldMoviesTable.cs" />
+    <Compile Include="Migrations\201906211157296_SetAvailabilityFieldToNumberInStockFieldMoviesTable.Designer.cs">
+      <DependentUpon>201906211157296_SetAvailabilityFieldToNumberInStockFieldMoviesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -251,6 +290,7 @@
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -263,12 +303,20 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Content\typeahead.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -280,7 +328,15 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -322,6 +378,7 @@
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -373,6 +430,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906181049174_ChangedPhoneFieldInAspNetUsers.resx">
       <DependentUpon>201906181049174_ChangedPhoneFieldInAspNetUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201059391_AddRentalTable.resx">
+      <DependentUpon>201906201059391_AddRentalTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906201150490_AddAvailabilityFieldToMoviesTable.resx">
+      <DependentUpon>201906201150490_AddAvailabilityFieldToMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906210132528_SetAvailabilityFieldToNumberInStockFieldInMoviesTable.resx">
+      <DependentUpon>201906210132528_SetAvailabilityFieldToNumberInStockFieldInMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906211155594_SeedDataInMoviesTableStockNumberAndAvailabilityNumber.resx">
+      <DependentUpon>201906211155594_SeedDataInMoviesTableStockNumberAndAvailabilityNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906211157296_SetAvailabilityFieldToNumberInStockFieldMoviesTable.resx">
+      <DependentUpon>201906211157296_SetAvailabilityFieldToNumberInStockFieldMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
