@@ -1,2 +1,2 @@
 # Vidly
-Video rental application for web in ASP.NET MVC
+Video rental ASP.NET MVC5 web app
